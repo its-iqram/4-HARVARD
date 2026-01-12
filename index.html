@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 HARVARD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .class-name {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #1a73e8;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 2rem;
+        }
+        
+        .spreadsheet-container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            height: calc(100vh - 200px);
+        }
+        
+        .spreadsheet-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile First Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem;
+            }
+            
+            .class-name {
+                font-size: 1.25rem;
+            }
+            
+            .main-content {
+                padding: 0.75rem;
+                padding-top: 1.5rem;
+            }
+            
+            .spreadsheet-container {
+                height: calc(100vh - 180px);
+                border-radius: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+            
+            .class-name {
+                font-size: 1.125rem;
+            }
+            
+            .main-content {
+                padding: 0.5rem;
+                padding-top: 1rem;
+            }
+            
+            .spreadsheet-container {
+                height: calc(100vh - 160px);
+                border-radius: 6px;
+            }
+            
+            .footer-content {
+                font-size: 0.8125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="class-name">4 HARVARD</div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="spreadsheet-container">
+            <iframe 
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgSJB4PKYg62yznW1XowZUyaHt1_r409l6iZpcXhjydhtG5OPhuRm7zWI5747FAM2_pM2rs2PgCdum/pubhtml?widget=true&headers=false" 
+                class="spreadsheet-iframe"
+                title="4 HARVARD Class Spreadsheet">
+            </iframe>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            &copy; 4 HARVARD 2025
+        </div>
+    </footer>
+</body>
+</html>
