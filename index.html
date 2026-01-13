@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 HARVARD</title>
+    <title>4 HARVARD 2026</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,8 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            background: #9FC76B; /* Matcha Green */
             color: #333;
             min-height: 100vh;
             display: flex;
@@ -22,26 +22,49 @@
         
         /* Navbar */
         .navbar {
-            background-color: white;
+            background: #E7B9C6; /* Pink Clouds */
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 2px solid #DD716B; /* Strawberry */
         }
         
         .navbar-content {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .class-name {
             font-family: 'Georgia', 'Times New Roman', Times, serif;
             font-weight: bold;
             font-size: 1.5rem;
-            color: #1a73e8;
+            color: #333;
             letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: #EEF2DD; /* Oatmilk */
+        }
+        
+        .nav-link:hover {
+            background: #DD716B; /* Strawberry */
+            color: white;
+            transform: translateY(-2px);
         }
         
         /* Main Content */
@@ -49,19 +72,38 @@
             flex: 1;
             padding: 1rem;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 2rem;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .section {
+            background: #EEF2DD; /* Oatmilk */
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 2px solid #9FC76B; /* Matcha Green */
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #333;
+            border-bottom: 2px solid #DD716B; /* Strawberry */
+            padding-bottom: 0.5rem;
         }
         
         .spreadsheet-container {
             width: 100%;
-            max-width: 1200px;
-            background: white;
+            height: 400px;
+            background: #A07D58; /* Light Espresso */
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            height: calc(100vh - 200px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .spreadsheet-iframe {
@@ -73,17 +115,17 @@
         
         /* Footer */
         .footer {
-            background-color: white;
+            background: #A07D58; /* Light Espresso */
             padding: 1rem;
             text-align: center;
-            border-top: 1px solid #e0e0e0;
+            border-top: 2px solid #9FC76B; /* Matcha Green */
             margin-top: auto;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            color: #666;
+            color: white;
             font-size: 0.875rem;
         }
         
@@ -97,14 +139,30 @@
                 font-size: 1.25rem;
             }
             
+            .nav-links {
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+            
+            .nav-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+            
             .main-content {
                 padding: 0.75rem;
-                padding-top: 1.5rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
             }
             
             .spreadsheet-container {
-                height: calc(100vh - 180px);
-                border-radius: 8px;
+                height: 300px;
             }
         }
         
@@ -117,14 +175,26 @@
                 font-size: 1.125rem;
             }
             
+            .nav-link {
+                padding: 0.5rem 0.5rem;
+                font-size: 0.75rem;
+            }
+            
             .main-content {
                 padding: 0.5rem;
-                padding-top: 1rem;
+            }
+            
+            .section {
+                padding: 0.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.25rem;
             }
             
             .spreadsheet-container {
-                height: calc(100vh - 160px);
-                border-radius: 6px;
+                height: calc(100vh - 200px);
+                border-radius: 8px;
             }
             
             .footer-content {
@@ -137,19 +207,45 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-content">
-            <div class="class-name">4 HARVARD</div>
+            <div class="class-name">4 HARVARD 2026</div>
+            <div class="nav-links">
+                <a href="#finance" class="nav-link">FINANCE</a>
+                <a href="#maths" class="nav-link">MATHS POCKET</a>
+            </div>
         </div>
     </nav>
     
     <!-- Main Content -->
     <main class="main-content">
-        <div class="spreadsheet-container">
-            <iframe 
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgSJB4PKYg62yznW1XowZUyaHt1_r409l6iZpcXhjydhtG5OPhuRm7zWI5747FAM2_pM2rs2PgCdum/pubhtml?widget=true&headers=false" 
-                class="spreadsheet-iframe"
-                title="4 HARVARD Class Spreadsheet">
-            </iframe>
-        </div>
+        <!-- Main Section -->
+        <section id="main" class="section">
+            <h1 class="section-title">4 HARVARD 2026</h1>
+            <p>Welcome to your comprehensive academic resource hub for the 2026 academic year.</p>
+        </section>
+        
+        <!-- Finance Section -->
+        <section id="finance" class="section">
+            <h2 class="section-title">FINANCE</h2>
+            <div class="spreadsheet-container">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgSJB4PKYg62yznW1XowZUyaHt1_r409l6iZpcXhjydhtG5OPhuRm7zWI5747FAM2_pM2rs2PgCdum/pubhtml?widget=true&headers=false" 
+                    class="spreadsheet-iframe"
+                    title="Finance Spreadsheet">
+                </iframe>
+            </div>
+        </section>
+        
+        <!-- Maths Pocket Section -->
+        <section id="maths" class="section">
+            <h2 class="section-title">MATHS POCKET</h2>
+            <div class="spreadsheet-container">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS8r80DPleSRxWsfCLtAfoWH9OEujYlhUNFOK3H5MB8NjdY9tppQZssQkHKpHsw9dTAXwhZyheALWVQ/pubhtml?widget=true&headers=false" 
+                    class="spreadsheet-iframe"
+                    title="Maths Pocket Spreadsheet">
+                </iframe>
+            </div>
+        </section>
     </main>
     
     <!-- Footer -->
@@ -160,3 +256,4 @@
     </footer>
 </body>
 </html>
+
