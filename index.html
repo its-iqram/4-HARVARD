@@ -1,201 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 HARVARD 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 HARVARD 2026</title>
 
-    <!-- Cute serif + modern sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=PT+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: #A9D48D; /* Softer Matcha */
-            color: #333;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+:root {
+    --bg: #FDFCF9;
+    --mint: #C8E7D8;
+    --sakura: #F5D4D8;
+    --text: #2E2E2E;
+    --soft-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
 
-        /* Navbar */
-        .navbar {
-            background: #F4C7D2; /* Pink Clouds but lighter */
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid #DD716B; /* Strawberry */
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .navbar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PT Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        .class-name {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: #333;
-            letter-spacing: 0.7px;
-        }
+/* Navbar */
+.navbar {
+    background: var(--sakura);
+    padding: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--soft-shadow);
+}
 
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .nav-link {
-            font-family: 'Nunito', sans-serif;
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.45rem 0.9rem;
-            border-radius: 10px;
-            transition: all 0.25s ease;
-            background: #F9F6E8; /* Oatmilk ~ cream */
-        }
+.class-name {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 
-        .nav-link:hover {
-            background: #DD716B;
-            color: white;
-            transform: translateY(-2px) scale(1.03);
-        }
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+}
 
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+.nav-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text);
+    background: white;
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    box-shadow: var(--soft-shadow);
+}
 
-        .section {
-            background: #F9F6E8; /* Cream */
-            border-radius: 18px;
-            padding: 1.6rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-            border: 2px solid #A9D48D;
-            transition: transform 0.25s ease;
-        }
+.nav-link:active,
+.nav-link:hover {
+    background: var(--mint);
+}
 
-        .section:hover {
-            transform: translateY(-4px);
-        }
+/* Main */
+.main-content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.85rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: #333;
-            border-bottom: 2px solid #DD716B;
-            padding-bottom: 0.4rem;
-        }
+/* Sections */
+.section {
+    background: white;
+    border-radius: 14px;
+    padding: 1.2rem;
+    box-shadow: var(--soft-shadow);
+}
 
-        .section p {
-            line-height: 1.45;
-            font-size: 1rem;
-            color: #555;
-        }
+.section-title {
+    font-family: 'Lora', serif;
+    font-size: 1.35rem;
+    margin-bottom: 0.65rem;
+    font-weight: 600;
+}
 
-        .spreadsheet-container {
-            width: 100%;
-            height: 400px;
-            background: #A07D58;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-        }
+/* Iframe */
+iframe {
+    width: 100%;
+    height: 68vh; /* dynamic for phones */
+    border: none;
+    box-shadow: var(--soft-shadow);
+    border-radius: 10px;
+}
 
-        .spreadsheet-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        /* Footer */
-        .footer {
-            background: #A07D58;
-            padding: 1rem;
-            text-align: center;
-            border-top: 2px solid #A9D48D;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            color: white;
-            font-size: 0.875rem;
-            font-family: 'Nunito', sans-serif;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .class-name { font-size: 1.3rem; }
-            .section-title { font-size: 1.6rem; }
-            .spreadsheet-container { height: 320px; }
-        }
-
-        @media (max-width: 480px) {
-            .class-name { font-size: 1.15rem; }
-            .section-title { font-size: 1.35rem; }
-            .spreadsheet-container {
-                height: calc(100vh - 200px);
-                border-radius: 10px;
-            }
-            .footer-content { font-size: 0.8rem; }
-        }
-    </style>
+/* Footer */
+.footer {
+    background: var(--mint);
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.8rem;
+}
+</style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <div class="class-name">4 HARVARD 2026</div>
-            <div class="nav-links">
-                <a href="#finance" class="nav-link">FINANCE</a>
-                <a href="#maths" class="nav-link">MATHS POCKET</a>
-            </div>
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="class-name">4 HARVARD 2026</div>
+        <div class="nav-links">
+            <a href="#finance" class="nav-link">FINANCE</a>
+            <a href="#maths" class="nav-link">MATHS</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main class="main-content">
-        <section id="main" class="section">
-            <h1 class="section-title">4 HARVARD 2026</h1>
-            <p>Welcome to your academic & finance pocket for the year — let’s make school life easier 💸📚</p>
-        </section>
+<main class="main-content">
 
-        <section id="finance" class="section">
-            <h2 class="section-title">FINANCE</h2>
-            <div class="spreadsheet-container">
-                <iframe src="YOUR-FINANCE-SHEET" class="spreadsheet-iframe"></iframe>
-            </div>
-        </section>
+<section class="section">
+    <h1 class="section-title">4 HARVARD 2026</h1>
+    <p>Welcome to your academic & finance pocket for the year 📚💸</p>
+</section>
 
-        <section id="maths" class="section">
-            <h2 class="section-title">MATHS POCKET</h2>
-            <div class="spreadsheet-container">
-                <iframe src="YOUR-MATH-SHEET" class="spreadsheet-iframe"></iframe>
-            </div>
-        </section>
-    </main>
+<section id="finance" class="section">
+    <h2 class="section-title">FINANCE</h2>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTgSJB4PKYg62yznW1XowZUyaHt1_r409l6iZpcXhjydhtG5OPhuRm7zWI5747FAM2_pM2rs2PgCdum/pubhtml?widget=true&headers=false"></iframe>
+</section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            &copy; 4 HARVARD 2025
-        </div>
-    </footer>
+<section id="maths" class="section">
+    <h2 class="section-title">MATHS POCKET</h2>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS8r80DPleSRxWsfCLtAfoWH9OEujYlhUNFOK3H5MB8NjdY9tppQZssQkHKpHsw9dTAXwhZyheALWVQ/pubhtml?widget=true&headers=false"></iframe>
+</section>
+
+</main>
+
+<footer class="footer">
+    © 4 HARVARD 2025
+</footer>
 </body>
 </html>
